@@ -4,9 +4,15 @@ import Image from 'next/image'
 import Cart from "../assets/shoppingCart.svg";
 import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { UserButton } from "@clerk/nextjs";
+import { useCartStore } from "@/store";
 
 
 function Navbar() {
+
+    // const useStore = useCartStore();
+
+
+
     return (
         <nav className="top-0 w-full flex items-center h-24 px-8 bg-yellow text-gray-200">
             <div className="flex items-center justify-between h-full w-full px-4 ">
@@ -59,13 +65,18 @@ function Navbar() {
                             </SignInButton>
                         </SignedOut>
                         <Link href="/carrinho">
-                            <li className="ml-10 mr-10 mt-2 uppercase hover:border-b text-red-700 font-bold">
-                                <Image
-                                    src={Cart}
-                                    height={20}
-                                    alt="Hamburguer"
-                                />
-                            </li>
+                            <div className="flex items-center cursor-pointer relative">
+                                <li className="ml-10 mr-10 mt-2 uppercase hover:border-b text-red-700 font-bold">
+                                    <Image
+                                        src={Cart}
+                                        height={20}
+                                        alt="Hamburguer"
+                                    />
+                                    <span className="bg-red-700 text-yellow rounded-full font-bold h-5 w-5 flex items-center justify-center absolute -top-2 right-7">
+                                        2
+                                    </span>
+                                </li>
+                            </div>
                         </Link>
                         <SignedIn>
                             <UserButton />
