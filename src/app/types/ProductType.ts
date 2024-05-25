@@ -2,9 +2,9 @@ export type ProductType = {
     index: number;
     title: string;
     description: string;
-    values: [
+    values: {
         single: number,
         combo: number
-    ];
+    };
     image: string;
 }

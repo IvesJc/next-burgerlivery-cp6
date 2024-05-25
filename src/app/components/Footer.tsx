@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FaYoutube, FaFacebook, FaInstagram, FaPinterest } from 'react-icons/fa';
 function Footer() {
   return (
-    <footer className="bg-yellow py-1 w-full">
+    <footer className="fixed bottom-0 bg-yellow py-1 w-full">
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-y-6 justify-center w-full">
           {/* logo */}
