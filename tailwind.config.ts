@@ -9,12 +9,24 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        red: {
+          700: "#db1020",
+          500: "#ff0000",
+        },
         yellow: "#ffd700",
-        red: "#db1020",
         cream: "#f9f5f5",
       }
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }: any) {
+      const newUtilities = {
+        '.clip-ellipse': {
+          'clip-path': 'ellipse(30.84% 43.79% at 62.7% 50.2%)',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
 };
 export default config;
