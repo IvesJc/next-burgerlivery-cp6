@@ -1,6 +1,8 @@
 import { ProductType } from "../types/ProductType"
 import ProductImage from "./ProductImage"
 import { formatPrice } from "../lib/utils"
+import AddCart from "./AddCart"
+
 
 type ProductProps = {
     product: ProductType
@@ -18,7 +20,7 @@ export default function Product({ product }: ProductProps) {
             <div className="flex justify-between font-bold text-red-700 my-3">
                 <p>{formatPrice(product.values.single)}</p>
             </div>
-            <button className="rounded-md bg-red-700 text-yellow font-bold text-center text-sm p-1">Adicionar ao carrinho</button>
+            <AddCart product={product} />
         </div>
 
 
