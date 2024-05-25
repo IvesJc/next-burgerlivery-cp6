@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from './components/Navbar'
 import Footer from "./components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
+import { ptBR } from "@clerk/localizations/pt-BR";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider localization={ptBR}>
       <html lang="en">
         <body className={'bg-cream '}>
           <Navbar />
