@@ -1,11 +1,14 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { ProductType } from './app/types/HamburgersType';
+import { HamburgersType } from './app/types/HamburgersType';
+import { DessertsType } from './app/types/DessertsType';
+import { BeveragesType } from './app/types/BeveragesType';
+import { AppetizerType } from './app/types/AppetizerType';
 
 type CartState = {
-    cart: ProductType[]
-    addProduct: (product: ProductType) => void,
-    removeProduct: (product: ProductType) => void,
+    cart: (HamburgersType | DessertsType | BeveragesType | AppetizerType)[],
+    addProduct: (product: HamburgersType | BeveragesType | AppetizerType | DessertsType) => void,
+    removeProduct: (product: HamburgersType | BeveragesType | AppetizerType | DessertsType) => void,
     isOpen: boolean;
     toggleCart: () => void;
     onCheckout: string;

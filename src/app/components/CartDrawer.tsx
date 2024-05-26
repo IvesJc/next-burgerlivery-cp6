@@ -10,7 +10,7 @@ export default function CartDrawer() {
     const useStore = useCartStore();
 
     const totalPrice = useStore.cart.reduce((acc, item) => {
-        return acc + (item.values.single! * item.quantity!);
+        return acc + (item.value! * item.quantity!);
     }, 0);
 
     return (
@@ -39,7 +39,7 @@ export default function CartDrawer() {
                                 className="object-cover w-24" />
                             <div>
                             <p>{product.title}</p>
-                            <p>{formatPrice(product.values.single)}</p>
+                            <p>{formatPrice(product.value)}</p>
                             <button className="py-1 px-2 border border-red-700 rounded-md mt-2 text-sm mr-1"
                                 onClick={() => useStore.addProduct(product)}>
                                 Adicionar
