@@ -19,18 +19,18 @@ export default function ProductImage({ product, fill }: ProductImageProps) {
             fill
             alt={product.title}
             className={`object-cover ${loading ? 'scale-110 blur-3xl grayscale'
-                    : 'scale-100 blur-0 grayscale-0'
+                    : 'scale-100 blur-0 grayscale-0 max-h-5'
                 }`}
             onLoad={() => setLoading(false)}
         />
     ) : (
         <Image
             src={product.image[0]}
-            width={50}
-            height={50}
+            width={400}
+            height={400}
             alt={product.title}
             className={`object-cover ${loading ? 'scale-110 blur-3xl grayscale'
-                    : 'scale-100 blur-0 grayscale-0'
+                    : 'scale-100 blur-0 grayscale-0 max-h-72'
                 }`}
             onLoad={() => setLoading(false)}
         />

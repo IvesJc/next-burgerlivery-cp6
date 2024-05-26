@@ -14,12 +14,12 @@ async function Cardapio() {
     const products = await getProducts();
 
     return (
-        <div className="container mx-auto max-w-7xl mx-auto pt-8 px-8 ">
+        <div className="container mx-auto max-w-7xl mx-auto pt-8 p-8 ">
             <h1 className='uppercase font-bold text-md h-full flex items-center text-red-700'>Cardapio</h1>
             <div className="grid grid-cols-3 gap-10">
 
                 {products.map((product: ProductType) => (
-                    <Product key={product.index} product={product}></Product>
+                    <Product key={product.title} product={product}></Product>
                 ))}
             </div>
         </div>

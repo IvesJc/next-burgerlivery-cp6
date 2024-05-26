@@ -4,7 +4,8 @@ type SignInPageProps = {
     searchParams: { redirectUrl: string }
 }
 
-export default function SignInPage({ searchParams: { redirectUrl } }: SignInPageProps) {
+export default function SignInPage({ searchParams: { redirectUrl },
+ }: SignInPageProps) {
     return (
         <section className="py-14">
             <div className="container mx-auto px-4">

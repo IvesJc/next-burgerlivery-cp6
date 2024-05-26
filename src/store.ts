@@ -18,10 +18,10 @@ export const useCartStore = create<CartState>()(
             cart: [],
             addProduct: (item) =>
                 set((state) => {
-                    const product = state.cart.find((p) => p.index === item.index);
+                    const product = state.cart.find((p) => p.title === item.title);
                     if (product) {
                         const updatedCart = state.cart.map((p) => {
-                            if (p.index === item.index) {
+                            if (p.title === item.title) {
                                 return { ...p, quantity: p.quantity ? p.quantity + 1 : 1 };
                             }
                             return p;
@@ -34,17 +34,17 @@ export const useCartStore = create<CartState>()(
             ,
             removeProduct: (item) =>
                 set((state) => {
-                    const existingProduct = state.cart.find((p) => p.index === item.index);
+                    const existingProduct = state.cart.find((p) => p.title === item.title);
                     if (existingProduct && existingProduct.quantity! > 1) {
                         const updatedCart = state.cart.map((p) => {
-                            if (p.index === item.index) {
+                            if (p.title === item.title) {
                                 return { ...p, quantity: p.quantity! - 1 };
                             }
                             return p;
                             });
                             return { cart: updatedCart };
                         }else{
-                            const filteredCart = state.cart.filter((p) => p.index !== item.index);	
+                            const filteredCart = state.cart.filter((p) => p.title !== item.title);	
                             return { cart: filteredCart };
                         }
                 })

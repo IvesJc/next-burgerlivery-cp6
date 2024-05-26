@@ -1,4 +1,5 @@
 export type ProductType = {
+    quantity: number;
     index: number;
     title: string;
     description: string;

@@ -3,6 +3,7 @@ import { formatPrice } from "../lib/utils";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
 import CheckoutButton from "./CheckoutButton";
+import ProductImage from "./ProductImage";
 
 
 export default function CartDrawer() {
@@ -30,11 +31,13 @@ export default function CartDrawer() {
                 <h1>Meu Carrinho</h1>
                 {
                     useStore.cart.map((product) => (
-                        <div key={product.index} className="flex justify-between my-4">
-                            <Image
-                                src={product.image[0]}
-                                width={100} height={100}
-                                alt={product.title}
+                        <div key={product.title} className="flex justify-between my-4">
+                            {/* <ProductImage product={product} fill={false} /> */}
+                            <Image 
+                                src={product.image[0]} 
+                                width={100} 
+                                height={100} 
+                                alt={product.title} 
                                 className="object-cover w-24" />
                             <div>
                             <p>{product.title}</p>
@@ -52,7 +55,7 @@ export default function CartDrawer() {
                     ))}
 
                     {
-                        useStore.cart.length > 0 && useStore.onCheckout === 'cart' &&(
+                        useStore.cart.length > 0 && (
                             <CheckoutButton totalPrice={totalPrice}/>
                         )
                     }
