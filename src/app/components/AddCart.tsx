@@ -1,9 +1,11 @@
 'use client'
 
 import { useCartStore } from "@/store";
-import { ProductType } from "../types/ProductType";
+import { HamburgersType } from "../types/HamburgersType";
+import { AppetizerType } from "../types/AppetizerType";
+import { BeveragesType } from "../types/BeveragesType";
 
-export default function Product({ product }: { product: ProductType}) {
+export default function Product({ product }: { product: HamburgersType | AppetizerType | BeveragesType }) {
 
     const { addProduct } = useCartStore();
 

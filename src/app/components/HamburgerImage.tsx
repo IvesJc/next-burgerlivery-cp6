@@ -1,15 +1,15 @@
 'use client'
 
-import { ProductType } from "../types/ProductType"
+import { HamburgersType } from "../types/HamburgersType"
 import Image from "next/image"
 import { useState } from "react"
 
-type ProductImageProps = {
-    product: ProductType;
+type HamburgerImageProps = {
+    product: HamburgersType;
     fill?: boolean
 }
 
-export default function ProductImage({ product, fill }: ProductImageProps) {
+export default function HamburgerImage({ product, fill }: HamburgerImageProps) {
 
     const [loading, setLoading] = useState(true)
 

@@ -1,11 +1,8 @@
-export type ProductType = {
+export type BeveragesType = {
     quantity: number;
     index: number;
     title: string;
     description: string;
-    values: {
-        single: number,
-        combo: number
-    };
+    value: number;
     image: string;
 }

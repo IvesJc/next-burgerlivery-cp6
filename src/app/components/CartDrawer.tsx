@@ -3,7 +3,6 @@ import { formatPrice } from "../lib/utils";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
 import CheckoutButton from "./CheckoutButton";
-import ProductImage from "./ProductImage";
 
 
 export default function CartDrawer() {
@@ -32,7 +31,6 @@ export default function CartDrawer() {
                 {
                     useStore.cart.map((product) => (
                         <div key={product.title} className="flex justify-between my-4">
-                            {/* <ProductImage product={product} fill={false} /> */}
                             <Image 
                                 src={product.image[0]} 
                                 width={100} 
