@@ -23,12 +23,12 @@ function Navbar() {
                 </Link>
                 <div>
                     <ul className="sm:flex ">
-                        <Link href="/home">
+                        <Link href="/">
                             <li className="ml-10 mt-2 uppercase hover:border-b text-red-700 font-bold">
                                 Home
                             </li>
                         </Link>
-                        <Link href="/cardapio">
+                        <Link href="/hamburgers">
                             <li className="ml-10 mt-2 uppercase hover:border-b text-red-700 font-bold">
                                 Cardápio
                             </li>

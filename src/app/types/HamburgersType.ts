@@ -1,11 +1,7 @@
-export type HamburgersType = {
-    quantity: number;
-    index: number;
-    title: string;
-    description: string;
-    values: {
-        single: number,
-        combo: number
-    };
-    image: string;
+import { ProductApiResponse } from "./ProductType";
+
+interface HamburgerValues {
+    single: number;
+    combo: number;
 }
+export type HamburgersType = ProductApiResponse<HamburgerValues>;

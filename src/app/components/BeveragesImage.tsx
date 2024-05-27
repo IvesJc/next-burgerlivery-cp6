@@ -12,10 +12,11 @@ type BeverageImageProps = {
 export default function BeverageImage({ product, fill }: BeverageImageProps) {
 
     const [loading, setLoading] = useState(true)
+    const imageSrc = typeof product.image === "string" ? product.image : product.image[0];
 
     return fill ? (
         <Image
-            src={product.image}
+            src={imageSrc}
             fill
             alt={product.title}
             className={`object-cover ${loading ? 'scale-110 blur-3xl grayscale'
@@ -25,7 +26,7 @@ export default function BeverageImage({ product, fill }: BeverageImageProps) {
         />
     ) : (
         <Image
-            src={product.image}
+            src={imageSrc}
             width={400}
             height={400}
             alt={product.title}

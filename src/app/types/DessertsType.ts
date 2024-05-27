@@ -1,8 +1,3 @@
-export type DessertsType = {
-    quantity: number;
-    index: number;
-    title: string;
-    description: string;
-    value: number;
-    image: string;
-}
+import { ProductApiResponse } from "./ProductType";
+
+export type DessertsType = ProductApiResponse<number>;

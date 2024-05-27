@@ -1,5 +1,6 @@
 import { DessertsType } from "../types/DessertsType";
 import Desserts from "../components/Desserts";
+import NavFoods from "../components/NavFoods";
 
 async function getDesserts() {
     const res = await fetch('http://localhost:8000/desserts');
@@ -16,6 +17,7 @@ async function Dessert() {
     return (
         <div className="container mx-auto max-w-7xl mx-auto pt-8 p-8 ">
             <h1 className='uppercase font-bold text-md h-full flex items-center text-red-700'>Cardapio</h1>
+            <NavFoods />
             <div className="grid grid-cols-3 gap-10">
 
                 {desserts.map((desserts: DessertsType) => (

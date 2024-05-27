@@ -1,11 +1,7 @@
-export type AppetizerType = {
-    quantity: number;
-    index: number;
-    title: string;
-    description: string;
-    value: {
-        small: number,
-        large: number
-    };
-    image: string;
+import { ProductApiResponse } from "./ProductType";
+
+interface AppetizerValues {
+    small: number;
+    large: number;
 }
+export type AppetizerType = ProductApiResponse<AppetizerValues>;

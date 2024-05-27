@@ -6,16 +6,19 @@ import { useState } from "react"
 
 type AppetizerImageProps = {
     product: AppetizerType ;
-    fill?: boolean
+    valueState: "small" | "large";
+    fill?: boolean;
 }
 
-export default function AppetizerImage({ product, fill }: AppetizerImageProps) {
+export default function AppetizerImage({ product, fill, valueState }: AppetizerImageProps) {
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const imageIdx = valueState === "small" ? 0 : 1;
+    const imageSrc = typeof product.image === "string" ? product.image : product.image[imageIdx];
 
     return fill ? (
         <Image
-            src={product.image}
+            src={imageSrc}
             fill
             alt={product.title}
             className={`object-cover ${loading ? 'scale-110 blur-3xl grayscale'
@@ -25,7 +28,7 @@ export default function AppetizerImage({ product, fill }: AppetizerImageProps) {
         />
     ) : (
         <Image
-            src={product.image}
+            src={imageSrc}
             width={400}
             height={400}
             alt={product.title}

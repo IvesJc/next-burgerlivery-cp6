@@ -21,9 +21,9 @@ export default function Beverages({ beverage }: BeveragesProps) {
                 <p className="">{beverage.description}</p>
             </div>
             <div className="flex justify-between font-bold text-red-700 my-3">
-                <p>{formatPrice(beverage.value)}</p>
+                <p>{formatPrice(beverage.value!)}</p>
             </div>
-            <AddCart product={beverage} />
+            <AddCart product={beverage} valueSelection="0"/>
         </div>
 
 

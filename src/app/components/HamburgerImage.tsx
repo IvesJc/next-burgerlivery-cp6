@@ -6,16 +6,19 @@ import { useState } from "react"
 
 type HamburgerImageProps = {
     product: HamburgersType;
+    valueState: "single" | "combo";
     fill?: boolean
 }
 
-export default function HamburgerImage({ product, fill }: HamburgerImageProps) {
+export default function HamburgerImage({ product, fill, valueState }: HamburgerImageProps) {
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const imageIdx = valueState === "single" ? 0 : 1;
+    const imageSrc = typeof product.image === "string" ? product.image : product.image[imageIdx];
 
     return fill ? (
         <Image
-            src={product.image[0]}
+            src={imageSrc}
             fill
             alt={product.title}
             className={`object-cover ${loading ? 'scale-110 blur-3xl grayscale'
@@ -25,7 +28,7 @@ export default function HamburgerImage({ product, fill }: HamburgerImageProps) {
         />
     ) : (
         <Image
-            src={product.image[0]}
+            src={imageSrc}
             width={400}
             height={400}
             alt={product.title}

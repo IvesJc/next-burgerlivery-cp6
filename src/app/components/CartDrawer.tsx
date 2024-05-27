@@ -32,14 +32,14 @@ export default function CartDrawer() {
                     useStore.cart.map((product) => (
                         <div key={product.title} className="flex justify-between my-4">
                             <Image 
-                                src={product.image[0]} 
+                                src={product.image} 
                                 width={100} 
                                 height={100} 
                                 alt={product.title} 
                                 className="object-cover w-24" />
                             <div>
                             <p>{product.title}</p>
-                            <p>{formatPrice(product.value)}</p>
+                            <p>{formatPrice(product.value * product.quantity)}</p>
                             <button className="py-1 px-2 border border-red-700 rounded-md mt-2 text-sm mr-1"
                                 onClick={() => useStore.addProduct(product)}>
                                 Adicionar
